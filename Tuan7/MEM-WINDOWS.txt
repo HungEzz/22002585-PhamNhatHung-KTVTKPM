@@ -1,0 +1,17 @@
+Loi: paging file too small / insufficient memory / mmap failed (1455)
+     hoac Maven crash ngay luc "test-compile" / "spring-boot:run"
+
+1) Moi project svc-* da co:
+   - .mvn/jvm.config (heap Maven ~384m)
+   - pom: maven.test.skip=true, compiler fork=false, heap app ~256m + SerialGC
+
+1b) Chay JAR (tranh phase Maven nang), vi du movie:
+   cd svc-movie
+   mvn -q -DskipTests package
+   java -Xmx192m -jar target/movie-service-1.0.0-SNAPSHOT.jar
+
+2) Windows: tang pagefile (Virtual memory) neu can.
+
+3) Dong bot IDE/tabs khi demo nhieu may.
+
+4) Neu van thieu RAM: giam -Xmx trong pom cua project ban.

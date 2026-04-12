@@ -1,0 +1,3 @@
+cd svc-movie
+mvn spring-boot:run
+# Cong 8082.

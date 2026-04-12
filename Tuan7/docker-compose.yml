@@ -1,0 +1,11 @@
+# Chay 1 lan tren 1 may (hoac may chu): docker compose up -d
+# Cac ban khac dat RABBITMQ_HOST=<IP may chay Rabbit>
+services:
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest

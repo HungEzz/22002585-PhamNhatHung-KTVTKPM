@@ -1,0 +1,16 @@
+com\buoi6\user\web\dto\LoginResponse.class
+com\buoi6\user\config\RabbitConfig.class
+com\buoi6\user\event\EventRouting.class
+com\buoi6\user\event\UserEventPublisher.class
+com\buoi6\user\UserServiceApplication.class
+com\buoi6\user\config\SecurityConfig.class
+com\buoi6\user\domain\AppUser.class
+com\buoi6\user\web\dto\LoginResponse$UserDto.class
+com\buoi6\user\event\UserRegisteredPayload.class
+com\buoi6\user\web\dto\LoginRequest.class
+com\buoi6\user\security\JwtService.class
+com\buoi6\user\web\ApiExceptionHandler.class
+com\buoi6\user\event\EventEnvelope.class
+com\buoi6\user\domain\AppUserRepository.class
+com\buoi6\user\web\AuthController.class
+com\buoi6\user\web\dto\RegisterRequest.class

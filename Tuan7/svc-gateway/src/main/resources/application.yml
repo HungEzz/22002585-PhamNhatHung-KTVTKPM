@@ -1,0 +1,29 @@
+# Chuyen tiep toi may cua tung ban: dat bien moi truong hoac doi default duoi day.
+# Vi du Git Bash: export GATEWAY_USER_URI=http://192.168.1.10:8081
+server:
+  port: 8080
+
+spring:
+  application.name: gateway
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origin-patterns: "*"
+            allowed-methods: "*"
+            allowed-headers: "*"
+            allow-credentials: true
+      routes:
+        - id: user-auth
+          uri: ${GATEWAY_USER_URI:http://127.0.0.1:8081}
+          predicates:
+            - Path=/v1/auth/**
+        - id: movies
+          uri: ${GATEWAY_MOVIE_URI:http://127.0.0.1:8082}
+          predicates:
+            - Path=/v1/movies/**
+        - id: bookings
+          uri: ${GATEWAY_BOOKING_URI:http://127.0.0.1:8083}
+          predicates:
+            - Path=/v1/bookings/**

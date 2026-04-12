@@ -1,0 +1,15 @@
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\config\RabbitConfig.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\domain\AppUserRepository.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\event\EventRouting.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\web\AuthController.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\event\UserEventPublisher.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\web\dto\LoginRequest.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\web\dto\RegisterRequest.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\event\UserRegisteredPayload.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\UserServiceApplication.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\domain\AppUser.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\config\SecurityConfig.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\web\ApiExceptionHandler.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\security\JwtService.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\event\EventEnvelope.java
+T:\buoi6\svc-user\src\main\java\com\buoi6\user\web\dto\LoginResponse.java

@@ -1,0 +1,7 @@
+com\buoi6\movie\config\DataSeed.class
+com\buoi6\movie\web\dto\CreateMovieRequest.class
+com\buoi6\movie\web\MovieController.class
+com\buoi6\movie\domain\Movie.class
+com\buoi6\movie\web\dto\MovieResponse.class
+com\buoi6\movie\domain\MovieRepository.class
+com\buoi6\movie\MovieServiceApplication.class

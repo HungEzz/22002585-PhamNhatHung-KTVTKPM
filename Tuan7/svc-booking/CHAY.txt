@@ -1,0 +1,3 @@
+cd svc-booking
+mvn spring-boot:run
+# Cong 8083. JWT_SECRET phai giong user-service.

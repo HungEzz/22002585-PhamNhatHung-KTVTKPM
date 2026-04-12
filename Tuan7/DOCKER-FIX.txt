@@ -1,0 +1,13 @@
+Loi: "docker daemon is not running" / "pipe/docker_engine ... not found"
+
+Cach 1 (khuyen nghi):
+  - Mo "Docker Desktop" tren Windows.
+  - Doi icon ca voi chuyen sang trang thai "Running".
+  - Chay lai (tu thu muc goc buoi6): docker compose up -d
+
+Cach 2 (khong dung Docker):
+  - Cai RabbitMQ cho Windows (can Erlang + RabbitMQ), chay broker tren cong 5672, user/pass guest/guest.
+
+Cach 3 (RabbitMQ may khac):
+  - Dat bien moi truong: RABBITMQ_HOST, RABBITMQ_PORT, RABBITMQ_USER, RABBITMQ_PASS
+  - Vi du: set RABBITMQ_HOST=192.168.1.10

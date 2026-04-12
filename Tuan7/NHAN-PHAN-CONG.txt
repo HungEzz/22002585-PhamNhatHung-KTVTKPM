@@ -1,0 +1,40 @@
+Buoi 6 — Movie Ticket — backend tach project (moi ban 1 folder, chi can 1 terminal + RabbitMQ chung)
+
+CHUNG:
+  - Java 17 + Maven.
+  - RabbitMQ: file docker-compose.yml o thu muc goc buoi6 (hoac 1 ban chay, ca nhom truy cap IP:5672).
+  - Moi service dat bien neu Rabbit khong phai localhost:
+      RABBITMQ_HOST  RABBITMQ_PORT  RABBITMQ_USER  RABBITMQ_PASS
+  - JWT: user-service va booking-service PHAI cung secret (mac dinh trong application.yml; doi thi thong nhat ca nhom).
+
+BAN 2 — User (cong 8081):
+  Thu muc: svc-user/
+  Chay: cd svc-user && mvn spring-boot:run
+  Event: publish USER_REGISTERED
+
+BAN 3 — Movie (cong 8082):
+  Thu muc: svc-movie/
+  Chay: cd svc-movie && mvn spring-boot:run
+
+BAN 4 — Booking (cong 8083):
+  Thu muc: svc-booking/
+  Chay: cd svc-booking && mvn spring-boot:run
+  Event: publish BOOKING_CREATED; consume PAYMENT_COMPLETED / BOOKING_FAILED
+
+BAN 5 — Payment + Notification (cong 8084):
+  Thu muc: svc-payment/
+  Chay: cd svc-payment && mvn spring-boot:run
+  Consume BOOKING_CREATED; publish PAYMENT_COMPLETED / BOOKING_FAILED; log notification khi thanh toan xong
+
+BAN 1 — FE + Gateway (cong 8080):
+  Thu muc: svc-gateway/  (Spring Cloud Gateway)
+  Chay: cd svc-gateway && mvn spring-boot:run
+  Dat URI toi may ban 2–4 (vi du IP LAN):
+    GATEWAY_USER_URI=http://192.168.1.12:8081
+    GATEWAY_MOVIE_URI=http://192.168.1.13:8082
+    GATEWAY_BOOKING_URI=http://192.168.1.14:8083
+  FE (movie-ticket-fe): proxy /api -> http://<IP may gateway>:8080
+
+GHI CHU RAM (Windows):
+  - Moi project co .mvn/jvm.config + pom giam heap.
+  - Neu loi paging file / het RAM: tang pagefile Windows hoac chi chay 1–2 service tren may yeu.

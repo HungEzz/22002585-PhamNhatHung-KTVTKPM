@@ -1,0 +1,3 @@
+cd svc-payment
+mvn spring-boot:run
+# Cong 8084. Can Rabbit + booking publish BOOKING_CREATED.

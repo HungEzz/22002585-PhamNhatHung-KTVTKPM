@@ -1,0 +1,17 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 5173,
+    proxy: {
+      // Dev: /api/v1/... → Gateway /v1/... (đổi VITE_DEV_PROXY_TARGET khi demo LAN)
+      "/api": {
+        target: process.env.VITE_DEV_PROXY_TARGET || "http://localhost:8080",
+        changeOrigin: true,
+        rewrite: (p) => p.replace(/^\/api/, ""),
+      },
+    },
+  },
+});

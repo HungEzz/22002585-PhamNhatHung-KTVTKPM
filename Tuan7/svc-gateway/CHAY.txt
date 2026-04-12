@@ -1,0 +1,3 @@
+cd svc-gateway
+mvn spring-boot:run
+# Cong 8080. Truoc khi chay, dat GATEWAY_USER_URI, GATEWAY_MOVIE_URI, GATEWAY_BOOKING_URI toi IP:port cua ban 2–4.

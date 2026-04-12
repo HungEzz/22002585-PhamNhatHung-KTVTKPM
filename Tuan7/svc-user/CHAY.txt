@@ -1,0 +1,3 @@
+cd svc-user
+mvn spring-boot:run
+# Cong 8081. Rabbit: localhost hoac RABBITMQ_HOST=IP may chu broker.
