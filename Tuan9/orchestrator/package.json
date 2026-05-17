@@ -1,0 +1,12 @@
+{
+  "name": "orchestrator",
+  "version": "1.0.0",
+  "description": "Orchestrator Service – Orchestration-Driven SOA",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "author": "Person 2",
+  "license": "ISC"
+}
