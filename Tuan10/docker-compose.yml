@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  user-service:
+    build: ./user-service
+    container_name: ecom-user
+    ports: ["8081:8081"]
+    volumes: ["./user-service:/app", "/app/node_modules"]
+    environment: [PORT=8081, JWT_SECRET=ecommerce-micro-secret-2024]
+
+  frontend:
+    build: ./frontend
+    container_name: ecom-frontend
+    ports: ["3000:80"]
+    depends_on: [user-service]
+
+networks:
+  default:
+    name: ecom-micro-net
