@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # ── Data Grid ──────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: flashsale-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru
+    networks:
+      - flashsale-net
+
+  # ── PU1: Product Processing Unit ───────────────
+  product-service:
+    build: ./product-service
+    container_name: flashsale-pu1
+    ports:
+      - "8081:8081"
+    environment:
+      - PORT=8081
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+    networks:
+      - flashsale-net
+
+  # ── Frontend ────────────────────────────────────
+  frontend:
+    build: ./frontend
+    container_name: flashsale-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - product-service
+    networks:
+      - flashsale-net
+
+networks:
+  flashsale-net:
+    driver: bridge

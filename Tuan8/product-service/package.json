@@ -1,0 +1,13 @@
+{
+  "name": "product-service",
+  "version": "1.0.0",
+  "description": "PU1 - Product Processing Unit (Space-Based Architecture)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": ["space-based", "flash-sale", "redis"],
+  "author": "Person 2",
+  "license": "ISC"
+}
